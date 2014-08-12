@@ -28,27 +28,41 @@
     
     //add it to our view
     [self.layerView.layer addSublayer:self.colorLayer];
+    
+    
 }
 
 - (IBAction)changeColor
 {    
-    //begin a new transaction
-    [CATransaction begin];
+//    //begin a new transaction
+//    [CATransaction begin];
+//    
+//    //set the animation duration to 1 second
+//    [CATransaction setAnimationDuration:5.0];
+//    
+//    //randomize the layer background color
+//    CGFloat red = arc4random() / (CGFloat)INT_MAX;
+//    CGFloat green = arc4random() / (CGFloat)INT_MAX;
+//    CGFloat blue = arc4random() / (CGFloat)INT_MAX;
+//    self.colorLayer.backgroundColor = [UIColor colorWithRed:red
+//                                                      green:green
+//                                                       blue:blue
+//                                                      alpha:1.0].CGColor;
+//    
+//    //commit the transaction
+//    [CATransaction commit];
     
-    //set the animation duration to 1 second
-    [CATransaction setAnimationDuration:1.0];
     
-    //randomize the layer background color
-    CGFloat red = arc4random() / (CGFloat)INT_MAX;
-    CGFloat green = arc4random() / (CGFloat)INT_MAX;
-    CGFloat blue = arc4random() / (CGFloat)INT_MAX;
-    self.colorLayer.backgroundColor = [UIColor colorWithRed:red
-                                                      green:green
-                                                       blue:blue
-                                                      alpha:1.0].CGColor;
-    
-    //commit the transaction
-    [CATransaction commit];
+    [UIView animateWithDuration:2.0 animations:^{
+        CGFloat red = arc4random() / (CGFloat)INT_MAX;
+        CGFloat green = arc4random() / (CGFloat)INT_MAX;
+        CGFloat blue = arc4random() / (CGFloat)INT_MAX;
+        self.colorLayer.backgroundColor = [UIColor colorWithRed:red
+                                                          green:green
+                                                           blue:blue
+                                                          alpha:1.0].CGColor;
+        self.layerView.backgroundColor = [UIColor colorWithCGColor:self.colorLayer.backgroundColor];
+    }];
 }
 
 @end
