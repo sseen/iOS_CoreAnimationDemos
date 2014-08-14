@@ -26,12 +26,16 @@
 }
 
 - (IBAction)changeColor
-{    
+{
+    NSLog(@"%@", [self.layerView actionForLayer:self.layerView.layer forKey:@"backgroundColor"]);
+    [UIView beginAnimations:nil context:nil];
+    
+    NSLog(@"%@", [self.layerView actionForLayer:self.layerView.layer forKey:@"backgroundColor"]);
     //begin a new transaction
     [CATransaction begin];
-        
+    
     //set the animation duration to 1 second
-    [CATransaction setAnimationDuration:1.0];
+    [CATransaction setAnimationDuration:2.0];
     
     //randomize the layer background color
     CGFloat red = arc4random() / (CGFloat)INT_MAX;
@@ -44,6 +48,7 @@
     
     //commit the transaction
     [CATransaction commit];
+    [UIView commitAnimations];
 }
 
 @end

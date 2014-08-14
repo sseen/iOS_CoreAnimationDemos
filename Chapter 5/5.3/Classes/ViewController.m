@@ -16,6 +16,8 @@
 
 @implementation ViewController
 
+
+// 2d矩阵的自己设置，shear transformation切向变化，需要自己设定矩阵
 CGAffineTransform CGAffineTransformMakeShear(CGFloat x, CGFloat y)
 {
     CGAffineTransform transform = CGAffineTransformIdentity;
