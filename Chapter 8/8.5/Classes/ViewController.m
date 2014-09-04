@@ -35,7 +35,7 @@
     //create a keyframe animation
     CAKeyframeAnimation *animation = [CAKeyframeAnimation animation];
     animation.keyPath = @"backgroundColor";
-    animation.duration = 1.0;
+    animation.duration = 2.0;
     animation.values = @[
                          (__bridge id)[UIColor blueColor].CGColor,
                          (__bridge id)[UIColor redColor].CGColor,

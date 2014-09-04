@@ -28,7 +28,7 @@
     
     //add a custom action
     CATransition *transition = [CATransition animation];
-    transition.duration = 50.0;
+    transition.duration = 1.0;
     transition.type = kCATransitionPush;
     transition.subtype = kCATransitionFromLeft;
     self.colorLayer.actions = @{@"backgroundColor": transition};

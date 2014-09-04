@@ -31,7 +31,7 @@
     CABasicAnimation *animation = [CABasicAnimation animation];
     animation.keyPath = @"transform";
     animation.duration = 2.0;
-    animation.toValue = [NSValue valueWithCATransform3D:CATransform3DMakeRotation(M_PI, 0, 0, 1)];
+    animation.toValue = [NSValue valueWithCATransform3D:CATransform3DMakeRotation(2*M_PI, 0, 0, 1)];
     [shipLayer addAnimation:animation forKey:nil];
 }
 

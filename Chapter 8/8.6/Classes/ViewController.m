@@ -28,9 +28,9 @@
                   controlPoint2:CGPointMake(225, 300)];
     
     //draw the path using a CAShapeLayer
-    CAShapeLayer *pathLayer = [CAShapeLayer layer];
+    CAShapeLayer *pathLayer = [CAShapeLayer layer]; // cashapelayer就是专门来绘制bezier曲线的
     pathLayer.path = bezierPath.CGPath;
-    pathLayer.fillColor = [UIColor clearColor].CGColor;
+    pathLayer.fillColor = [UIColor greenColor].CGColor; //改为有颜色的，立马看到效果
     pathLayer.strokeColor = [UIColor redColor].CGColor;
     pathLayer.lineWidth = 3.0f;
     [self.containerView.layer addSublayer:pathLayer];
